@@ -33,10 +33,27 @@ body {
   padding: 0.4rem 0.8rem;
   text-align: center;
   line-height: 1;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .container .button-ings {
   margin-bottom: 15px;
+}
+
+.container .button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.container .button:active {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
 .container .header {
@@ -68,7 +85,6 @@ body {
 }
 
 .container .header_buttons_and_inputs {
-  border-radius: 25%;
   max-height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -78,11 +94,17 @@ body {
 .container .header-input {
   padding-left: 0.2rem;
   max-width: 115px;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
 .container .header-region {
   margin-right: 15px;
   cursor: pointer;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
 .container .header-button {
@@ -151,6 +173,9 @@ body {
   height: fit-content;
   min-height: 400px;
   width: 250px;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
