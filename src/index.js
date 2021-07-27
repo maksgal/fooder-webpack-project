@@ -122,6 +122,14 @@ const runner = () => {
 
     content.appendChild(ingredients);
 
+    //adding link to the full recipe
+    const recipeLink = document.createElement("a");
+    recipeLink.classList.add("button", "button-ings");
+    recipeLink.setAttribute("href", arrItem.recipe.url);
+    recipeLink.setAttribute("target", "_blank");
+    recipeLink.innerText = "Full Recipe";
+    content.appendChild(recipeLink);
+
     li.appendChild(content);
 
     //Inserting adding and removing buttons
