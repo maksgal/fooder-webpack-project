@@ -285,4 +285,13 @@ body {
             transform: scale(0.97);
   }
 }
+
+@media (max-width: 350px) {
+  .header-input {
+    max-width: 80px !important;
+  }
+  .header-region {
+    max-width: 63px !important;
+  }
+}
 /*# sourceMappingURL=style.css.map */
