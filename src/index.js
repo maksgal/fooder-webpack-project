@@ -12,10 +12,10 @@ const runner = () => {
   let searchURL;
   //Hiding the header on scroll
   const headerHider = () => {
-    var prevScrollpos = window.pageYOffset;
+    let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
       const currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
+      if (prevScrollpos > currentScrollPos || currentScrollPos < 100) {
         header.classList.remove("header-hidden");
       } else {
         header.classList.add("header-hidden");
@@ -161,6 +161,17 @@ const runner = () => {
         removeFavFromLocalStorage(arrItem);
         if (listType === "favsList") {
           li.style.display = "none";
+          // If you delete the last element this changes the list header and adds the return button.
+          if (JSON.parse(localStorage.getItem("favorites")).length === 0) {
+            listHeader.innerText = "Nothing to show :/";
+            const getBackButton = document.createElement("button");
+            getBackButton.classList.add("button", "button-get-back");
+            getBackButton.innerText = "Return";
+            mainSection.appendChild(getBackButton);
+            getBackButton.onclick = () => {
+              runner();
+            };
+          }
         } else {
           removeFromFavsButton.classList.add("hidden");
           addToFavsButton.classList.remove("hidden");
@@ -198,9 +209,13 @@ const runner = () => {
     const arrFromLS = JSON.parse(localStorage.getItem("favorites"));
 
     if (arrFromLS) {
-      arrFromLS.forEach((el) => {
-        createListItems(el, "favsList");
-      });
+      if (arrFromLS.length !== 0) {
+        arrFromLS.forEach((el) => {
+          createListItems(el, "favsList");
+        });
+      } else {
+        console.log("empty!");
+      }
     }
   };
 
@@ -256,7 +271,7 @@ const runner = () => {
   createLocalStorageArrayOfFavs();
   showSuggestion();
   showHideFavButton(JSON.parse(localStorage.getItem("favorites")));
-  headerLogo.onclick = starter;
+  headerLogo.onclick = runner;
   searchButton.onclick = () => fillSearchResultsList();
   favsButton.onclick = () => fillFavoritesList();
 };
