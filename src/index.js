@@ -210,7 +210,7 @@ const runner = () => {
       }
     }
   };
-
+  // Filling the list of saved recipes
   const fillFavoritesList = () => {
     listHeader.innerText = "Your saved dishes:";
     recipeList.innerHTML = "";
@@ -226,7 +226,7 @@ const runner = () => {
       }
     }
   };
-
+  // Showing or hiding the header button which opens the list of saved recipes
   const showHideFavButton = (arrFromLS) => {
     if (!arrFromLS || arrFromLS.length === 0) {
       favsButton.classList.add("hidden");
@@ -243,7 +243,7 @@ const runner = () => {
       evening = hour >= 17 && hour <= 20,
       night = hour >= 21 || hour <= 3;
 
-    const suggestionURL = `${GET_URL}&q=_&cuisineType=british&dishType=Main course&mealType=`;
+    const suggestionURL = `${GET_URL}&q=_&cuisineType=french&dishType=Main course&mealType=`;
     const suggestionTitle = document.createElement("h1");
 
     let response;
